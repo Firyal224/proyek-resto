@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Restoran</title>
+  <meta name="description" content="">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <script>document.documentElement.classList.add("js")</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="assets/frames/hero/mobile/0001.webp" media="(max-width: 767px)" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/frames/hero/desktop/0001.webp" media="(min-width: 768px)" fetchpriority="high">
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script type="module" src="js/render.js"></script>
+  <script type="module" src="js/reservasi.js"></script>
+  <script type="module" src="js/scroll-cinematic.js"></script>
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main">Lewati ke konten</a>
+
+  <!-- 0 · Preloader -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <p class="preloader__logo" data-bind="logoText"></p>
+    <div class="preloader__bar"><span></span></div>
+  </div>
+
+  <div class="progress-bar" aria-hidden="true"></div>
+  <header class="nav" data-render="nav"></header>
+
+  <main id="main">
+    <!-- 1 · Hero (pinned): sate dibakar di bara, full-bleed -->
+    <section class="scene hero theme-dark" id="scene-hero" data-nav-hero aria-label="Pembuka">
+      <div class="scene__stage">
+        <div class="hero__media">
+          <picture>
+            <source media="(max-width: 767px)" srcset="assets/frames/hero/mobile/0001.webp" width="720" height="1280">
+            <img class="scene__poster" src="assets/frames/hero/desktop/0001.webp" alt="" data-alt-bind="signature.name" fetchpriority="high" decoding="async" width="1280" height="720">
+          </picture>
+          <canvas class="scene__canvas" aria-hidden="true"></canvas>
+        </div>
+        <div class="hero__scrim"></div>
+        <h1 class="hero__title"><span class="sr-only">Restoran </span><span data-bind="name"></span></h1>
+        <div class="hero__front">
+          <div class="wrap">
+            <div class="hero__copy">
+              <span class="badge" data-open-badge></span>
+              <p class="hero__tagline" data-bind="tagline"></p>
+              <div class="hero__ctas">
+                <a class="btn btn--primary" href="reservasi.html" data-reserve>Reservasi</a>
+                <a class="btn btn--secondary" href="menu.html">Lihat Menu</a>
+              </div>
+            </div>
+            <span class="scroll-hint" aria-hidden="true">Gulir</span>
+          </div>
+        </div>
+        <div class="hero__fade"></div>
+      </div>
+    </section>
+
+    <!-- 2 · Signature (pinned): piring turun & mendarat di depan judul raksasa -->
+    <section class="scene signature theme-dark" id="scene-signature" aria-labelledby="sig-title">
+      <div class="scene__stage">
+        <p class="signature__giant" aria-hidden="true"><span data-bind="name"></span><span class="outline" data-bind="name"></span></p>
+        <div class="signature__media">
+          <img class="scene__poster" alt="" data-alt-bind="signature.name" loading="lazy" decoding="async" width="1280" height="720">
+          <canvas class="scene__canvas" aria-hidden="true"></canvas>
+        </div>
+        <div class="signature__copy">
+          <div class="wrap">
+            <div class="signature__left">
+              <p class="eyebrow">Signature</p>
+              <h2 class="signature__name" id="sig-title" data-bind="signature.name"></h2>
+            </div>
+            <div class="signature__right">
+              <p class="signature__desc" data-bind="signature.desc"></p>
+              <p class="signature__price" data-bind-price="signature.price"></p>
+              <div class="signature__actions" style="margin-top:20px">
+                <a class="btn btn--primary" href="menu.html" data-order="Sate Lilit">Pesan</a>
+                <a class="link-arrow" href="menu.html"><span>Lihat menu</span><span class="arrow" aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 · Story (krem, parallax 3 layer) -->
+    <section class="story theme-light" id="cerita" data-nav-theme="light" aria-labelledby="story-title">
+      <p class="story__word" aria-hidden="true" data-speed="-18">taman</p>
+      <div class="wrap story__grid">
+        <div class="story__imgs" aria-hidden="true">
+          <figure class="story__img story__img--a" data-speed="-6"><div class="story__tilt" data-tilt><img data-bind-src="story.images.0" data-inner-speed="8" alt="" loading="lazy" decoding="async" width="1600" height="2000"></div></figure>
+          <figure class="story__img story__img--b" data-speed="14"><div class="story__tilt" data-tilt><img data-bind-src="story.images.1" alt="" loading="lazy" decoding="async" width="1200" height="1600"></div></figure>
+        </div>
+        <div class="story__copy">
+          <p class="eyebrow">Cerita kami</p>
+          <h2 class="section-title" id="story-title" data-bind="story.title"></h2>
+          <p class="lead" data-bind="story.text"></p>
+          <div class="stats" data-render="stats"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 · Best seller (grid vertikal, tidak di-pin) -->
+    <section class="best theme-light" id="best-seller" data-nav-theme="light" aria-labelledby="best-title" data-hide-if-empty="bestSellers">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Best seller</p>
+            <h2 class="section-title" id="best-title">Paling sering <em>dipesan</em></h2>
+          </div>
+          <a class="link-arrow" href="menu.html"><span>Lihat semua menu</span><span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+        <div class="card-grid" data-render="best-sellers"></div>
+      </div>
+    </section>
+
+    <!-- 5 · Social proof -->
+    <section class="social theme-light" id="ulasan" data-nav-theme="light" aria-labelledby="social-title" data-render="social"></section>
+
+    <!-- 6 · CTA Reservasi (gelap, form ringkas) -->
+    <section class="cta theme-dark" id="reservasi" aria-labelledby="cta-title">
+      <div class="cta__bg" data-bind-bg="reservationImage" data-speed="-10"></div>
+      <div class="wrap cta__inner">
+        <div class="cta__copy">
+          <p class="eyebrow">Reservasi</p>
+          <h2 class="section-title" id="cta-title">Pesan meja dalam <em>satu pesan</em> WhatsApp</h2>
+          <p class="lead">Isi form singkat ini — pesan reservasi otomatis tersusun rapi di WhatsApp, tinggal kirim.</p>
+          <span class="badge" data-open-badge></span>
+        </div>
+        <form class="form panel" id="reservation-form" novalidate aria-label="Form reservasi singkat">
+          <div class="form__grid">
+            <div class="field">
+              <label for="r-name">Nama</label>
+              <input id="r-name" name="name" autocomplete="name" placeholder="Nama pemesan" required aria-describedby="e-name">
+              <span class="field__error" id="e-name" data-error-for="name" aria-live="polite"></span>
+            </div>
+            <div class="field">
+              <label for="r-pax">Jumlah orang</label>
+              <input id="r-pax" name="pax" type="number" inputmode="numeric" min="1" required aria-describedby="e-pax">
+              <span class="field__error" id="e-pax" data-error-for="pax" aria-live="polite"></span>
+            </div>
+            <div class="field">
+              <label for="r-date">Tanggal</label>
+              <input id="r-date" name="date" type="date" required aria-describedby="h-date e-date">
+              <span class="field__hint" id="h-date" data-date-label></span>
+              <span class="field__error" id="e-date" data-error-for="date" aria-live="polite"></span>
+            </div>
+            <div class="field">
+              <label for="r-time">Jam</label>
+              <div class="select" data-time-select>
+                <select id="r-time" name="time" required aria-describedby="e-time"><option value="">Pilih tanggal dulu</option></select>
+              </div>
+              <span class="field__error" id="e-time" data-error-for="time" aria-live="polite"></span>
+            </div>
+          </div>
+          <button class="btn btn--primary form__submit" type="submit" data-wa-icon>Kirim via WhatsApp</button>
+          <p class="form__note" data-confirm-note>Konfirmasi ketersediaan via WhatsApp dalam ±15 menit di jam buka.</p>
+          <a class="link-arrow" href="reservasi.html"><span>Butuh catatan khusus? Form lengkap</span><span class="arrow" aria-hidden="true">→</span></a>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- 7 · Footer reveal -->
+  <footer class="footer" data-render="footer"></footer>
+
+  <nav class="mobile-bar" aria-label="Aksi cepat">
+    <a class="btn btn--primary" href="reservasi.html" data-reserve>Reservasi</a>
+    <a class="btn btn--secondary" href="menu.html" data-order>Pesan Online</a>
+  </nav>
+</body>
+</html>

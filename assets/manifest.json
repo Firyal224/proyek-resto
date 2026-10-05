@@ -1,0 +1,85 @@
+{
+  "confirmed": true,
+  "confirmedAt": "2026-10-05",
+  "restaurantName": "KALIA",
+  "menuNames": {
+    "breakfast-menu1": "Sunny Side Up",
+    "cordon-blue": "Chicken Cordon Bleu",
+    "es-kopu": "Es Kopi Susu",
+    "matcha-and-coffee": ["Es Matcha Latte", "Es Kopi Latte"],
+    "nasi-goreng": "Nasi Goreng",
+    "roll": "Roll Nori",
+    "sate-lilit": "Sate Lilit",
+    "steak-ayam": "Chicken Steak",
+    "udang": "Udang Crispy",
+    "pizza-menu": "Truffle Mushroom Pizza",
+    "breakfast": "Scrambled Egg on Toast"
+  },
+  "openQuestions": [
+    "Varian nasi goreng (mis. Nasi Goreng Kampung/Spesial?) — sementara 'Nasi Goreng'",
+    "Nama resmi 'Roll Nori' & 'Udang Crispy' — nama deskriptif sementara",
+    "cordon-blue.jpg dipakai apa adanya (background berantakan); versi background bersih hanya jika diminta"
+  ],
+
+  "signature": {
+    "file": "assets/images/menu/sate lilit.jpg",
+    "slug": "sate-lilit",
+    "dish": "Sate Lilit dengan salad segar",
+    "action": "hero: asap bakaran tipis naik dari sate; signature: sate & salad melayang terpisah lalu kembali ke piring",
+    "changedAt": "2026-10-05",
+    "changeNote": "Diganti user dari Nasi Goreng → Sate Lilit. Nasi Goreng tetap di best seller.",
+    "generation": "Keyframe & klip dibuat MANUAL oleh user (Gemini) → assets/generated/keyframes/hero.png, assets/generated/clips/hero.mp4 & signature.mp4. Higgsfield tidak dipakai.",
+    "alternatives": [
+      { "file": "assets/images/menu/nasi goreng.jpg", "dish": "Nasi Goreng", "action": "uap naik", "note": "signature sebelumnya" },
+      { "file": "assets/images/menu/breakfast-menu1.jpg", "dish": "Sunny Side Up", "action": "kuning telur pecah & lumer", "note": "ada teks promo tertanam di pojok kanan bawah" }
+    ]
+  },
+
+  "bestSellers": [
+    "assets/images/menu/nasi goreng.jpg",
+    "assets/images/menu/sate lilit.jpg",
+    "assets/images/menu/cordon blue.jpg",
+    "assets/images/menu/roll.jpg",
+    "assets/images/menu/breakfast-menu1.jpg",
+    "assets/images/menu/es kopu.jpg"
+  ],
+  "bestSellerAlternates": [
+    "assets/images/menu/steak ayam.jpg",
+    "assets/images/menu/udang.jpg",
+    "assets/images/menu/matcha and coffee.jpg"
+  ],
+
+  "vibes": [
+    "assets/images/vibes-restaurant/5.jpg",
+    "assets/images/vibes-restaurant/4.jpg",
+    "assets/images/vibes-restaurant/1.jpg"
+  ],
+  "vibesAlternates": [
+    "assets/images/vibes-restaurant/2.jpg",
+    "assets/images/vibes-restaurant/3.jpg"
+  ],
+
+  "unused": [
+    { "file": "assets/images/menu/pizza-menu.jpg", "reason": "resolusi rendah (320x400) + teks & logo promo tertanam; tidak layak untuk kartu 800px" },
+    { "file": "assets/images/menu/breakfast.jpg", "reason": "judul promo besar 'Choose Your Breakfast' tertanam di foto; hanya cocok di halaman Menu bila user setuju" }
+  ],
+
+  "inventory": [
+    { "file": "assets/images/menu/breakfast-menu1.jpg", "slug": "breakfast-menu1", "category": "menu", "size": "1279x1600", "sharp": "baik", "light": "hangat, agak gelap", "bg": "rapi (meja kayu)", "notes": "teks 'Sunny Side Up' + deskripsi di kanan bawah, logo di atas", "nameGuess": "Sunny Side Up" },
+    { "file": "assets/images/menu/breakfast.jpg", "slug": "breakfast", "category": "menu", "size": "1279x1600", "sharp": "baik", "light": "hangat", "bg": "rapi", "notes": "judul promo besar tertanam", "nameGuess": "[NAMA?] Scrambled Egg on Toast" },
+    { "file": "assets/images/menu/cordon blue.jpg", "slug": "cordon-blue", "category": "menu", "size": "765x1020", "sharp": "baik", "light": "terang", "bg": "berantakan (botol bayi, wadah saus, gelas)", "nameGuess": "Chicken Cordon Bleu" },
+    { "file": "assets/images/menu/es kopu.jpg", "slug": "es-kopu", "category": "menu", "size": "765x1020", "sharp": "baik", "light": "terang alami", "bg": "rapi (meja + taman)", "nameGuess": "Es Kopi Susu?" },
+    { "file": "assets/images/menu/matcha and coffee.jpg", "slug": "matcha-and-coffee", "category": "menu", "size": "765x1020", "sharp": "cukup", "light": "datar", "bg": "ada orang & kursi di belakang", "nameGuess": "Es Matcha Latte + Es Kopi Latte" },
+    { "file": "assets/images/menu/nasi goreng.jpg", "slug": "nasi-goreng", "category": "menu", "size": "765x1020", "sharp": "baik", "light": "terang, warna kaya", "bg": "rapi (meja kayu)", "nameGuess": "Nasi Goreng [VARIAN?]" },
+    { "file": "assets/images/menu/pizza-menu.jpg", "slug": "pizza-menu", "category": "menu", "size": "320x400", "sharp": "rendah", "light": "gelap", "bg": "props promo", "notes": "teks 'Truffle Mushroom Pizza' tertanam", "nameGuess": "Truffle Mushroom Pizza" },
+    { "file": "assets/images/menu/roll.jpg", "slug": "roll", "category": "menu", "size": "765x1020", "sharp": "baik", "light": "baik", "bg": "rapi", "nameGuess": "[NAMA?] roll berbalut nori + saus cocol" },
+    { "file": "assets/images/menu/sate lilit.jpg", "slug": "sate-lilit", "category": "menu", "size": "680x1020", "sharp": "baik", "light": "terang/high-key", "bg": "bersih", "nameGuess": "Sate Lilit" },
+    { "file": "assets/images/menu/steak ayam.jpg", "slug": "steak-ayam", "category": "menu", "size": "765x1020", "sharp": "agak lembut", "light": "hangat", "bg": "berantakan (gelas, wadah) & blur", "nameGuess": "Chicken Steak Crispy" },
+    { "file": "assets/images/menu/udang.jpg", "slug": "udang", "category": "menu", "size": "680x1020", "sharp": "agak lembut (fokus dangkal)", "light": "hangat gelap", "bg": "rapi", "nameGuess": "Udang [?] Crispy" },
+    { "file": "assets/images/vibes-restaurant/1.jpg", "slug": "vibes-1", "category": "vibes", "size": "1360x1020", "sharp": "baik", "light": "gelap, lampu gantung", "bg": "-", "notes": "bar/counter + kisi kayu" },
+    { "file": "assets/images/vibes-restaurant/2.jpg", "slug": "vibes-2", "category": "vibes", "size": "765x1020", "sharp": "baik", "light": "campuran", "bg": "-", "notes": "area makan dekat kolam" },
+    { "file": "assets/images/vibes-restaurant/3.jpg", "slug": "vibes-3", "category": "vibes", "size": "765x1020", "sharp": "baik", "light": "siang", "bg": "-", "notes": "taman outdoor, kursi lipat" },
+    { "file": "assets/images/vibes-restaurant/4.jpg", "slug": "vibes-4", "category": "vibes", "size": "1020x1020", "sharp": "baik", "light": "siang hijau", "bg": "-", "notes": "dining semi-outdoor, taman tropis" },
+    { "file": "assets/images/vibes-restaurant/5.jpg", "slug": "vibes-5", "category": "vibes", "size": "1024x768", "sharp": "baik", "light": "siang", "bg": "-", "notes": "ruang makan atap tinggi + logo KALIA, landscape" }
+  ]
+}

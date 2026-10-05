@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Menu</title>
+  <meta name="description" content="">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <script>document.documentElement.classList.add("js")</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="module" src="js/render.js"></script>
+</head>
+<body data-page="menu" class="theme-light">
+  <a class="skip-link" href="#main">Lewati ke konten</a>
+  <div class="progress-bar" aria-hidden="true"></div>
+  <header class="nav" data-render="nav"></header>
+
+  <main id="main">
+    <header class="page-head theme-dark" data-nav-hero>
+      <div class="page-head__bg" data-bind-bg="menuHeaderImage" data-parallax></div>
+      <div class="wrap">
+        <p class="eyebrow">Menu <span data-bind="name"></span></p>
+        <h1 class="page-head__title">Dari dapur, <em>untuk meja</em></h1>
+        <div class="page-head__meta">
+          <span>Semua foto adalah hidangan asli kami.</span>
+          <span class="badge" data-open-badge></span>
+        </div>
+      </div>
+    </header>
+
+    <nav class="tabs" aria-label="Kategori menu" data-nav-theme="light">
+      <div class="wrap tabs__inner" data-render="menu-tabs"></div>
+    </nav>
+
+    <div class="wrap menu-body" data-nav-theme="light" data-render="menu"></div>
+
+    <section class="menu-end theme-dark" aria-labelledby="end-title">
+      <div class="wrap" style="display:grid;justify-items:center;gap:28px">
+        <p class="eyebrow">Makan di tempat</p>
+        <h2 class="section-title" id="end-title">Pesan meja <em>untuk malam ini</em></h2>
+        <a class="btn btn--primary" href="reservasi.html" data-reserve>Reservasi</a>
+      </div>
+    </section>
+  </main>
+
+  <a class="btn btn--primary fab" href="index.html" data-order>Pesan Online</a>
+
+  <footer class="footer" data-render="footer"></footer>
+
+  <nav class="mobile-bar" aria-label="Aksi cepat">
+    <a class="btn btn--primary" href="reservasi.html" data-reserve>Reservasi</a>
+    <a class="btn btn--secondary" href="index.html" data-order>Pesan Online</a>
+  </nav>
+</body>
+</html>

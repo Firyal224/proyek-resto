@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Reservasi &amp; Lokasi</title>
+  <meta name="description" content="">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <script>document.documentElement.classList.add("js")</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="module" src="js/render.js"></script>
+  <script type="module" src="js/reservasi.js"></script>
+</head>
+<body data-page="reservasi" class="theme-dark">
+  <a class="skip-link" href="#main">Lewati ke konten</a>
+  <div class="progress-bar" aria-hidden="true"></div>
+  <header class="nav" data-render="nav"></header>
+
+  <main id="main">
+    <header class="page-head theme-dark" data-nav-hero>
+      <div class="page-head__bg" data-bind-bg="reservationImage" data-parallax></div>
+      <div class="wrap">
+        <p class="eyebrow">Reservasi &amp; Lokasi</p>
+        <h1 class="page-head__title">Pesan meja <em>di <span data-bind="name"></span></em></h1>
+        <div class="page-head__meta">
+          <span class="badge" data-open-badge></span>
+          <span>Konfirmasi via WhatsApp ±15 menit di jam buka</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="wrap resv" id="reservasi">
+      <form class="form panel" id="reservation-form" novalidate aria-labelledby="form-title">
+        <div>
+          <h2 id="form-title" class="resv__title">Form reservasi</h2>
+          <p class="form__note">Isi data di bawah — pesan WhatsApp tersusun otomatis.</p>
+        </div>
+        <div class="form__grid">
+          <div class="field field--full">
+            <label for="r-name">Nama</label>
+            <input id="r-name" name="name" autocomplete="name" placeholder="Nama pemesan" required aria-describedby="e-name">
+            <span class="field__error" id="e-name" data-error-for="name" aria-live="polite"></span>
+          </div>
+          <div class="field">
+            <label for="r-date">Tanggal</label>
+            <input id="r-date" name="date" type="date" required aria-describedby="h-date e-date">
+            <span class="field__hint" id="h-date" data-date-label></span>
+            <span class="field__error" id="e-date" data-error-for="date" aria-live="polite"></span>
+          </div>
+          <div class="field">
+            <label for="r-time">Jam</label>
+            <div class="select" data-time-select>
+              <select id="r-time" name="time" required aria-describedby="e-time"><option value="">Pilih tanggal dulu</option></select>
+            </div>
+            <span class="field__error" id="e-time" data-error-for="time" aria-live="polite"></span>
+          </div>
+          <div class="field field--full">
+            <label for="r-pax">Jumlah orang</label>
+            <input id="r-pax" name="pax" type="number" inputmode="numeric" min="1" required aria-describedby="e-pax">
+            <span class="field__error" id="e-pax" data-error-for="pax" aria-live="polite"></span>
+          </div>
+          <div class="field field--full">
+            <label for="r-note">Catatan <small>(opsional)</small></label>
+            <textarea id="r-note" name="note" placeholder="mis. dekat jendela, kursi bayi, ulang tahun"></textarea>
+          </div>
+        </div>
+        <button class="btn btn--primary form__submit" type="submit" data-wa-icon>Kirim via WhatsApp</button>
+        <p class="form__note" data-confirm-note>Konfirmasi ketersediaan via WhatsApp dalam ±15 menit di jam buka.</p>
+      </form>
+
+      <aside class="preview" aria-labelledby="preview-title">
+        <h2 id="preview-title" class="footer__h">Pratinjau pesan WhatsApp</h2>
+        <pre id="wa-preview" aria-live="polite"></pre>
+        <p class="form__note">Pesan ini terisi otomatis di WhatsApp. Kamu masih bisa mengubahnya sebelum mengirim.</p>
+      </aside>
+    </div>
+
+    <!-- Lokasi: alamat + jam buka + peta (klik peta → Google Maps) -->
+    <section class="location" id="lokasi" aria-labelledby="loc-title" data-render="location"></section>
+
+    <div class="wrap info-grid">
+      <section class="info-card" aria-labelledby="faq-title" data-render-section="faq">
+        <h2 id="faq-title" class="footer__h">FAQ</h2>
+        <div data-render="faq"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer" data-render="footer"></footer>
+
+  <nav class="mobile-bar" aria-label="Aksi cepat">
+    <a class="btn btn--primary" href="#reservation-form" data-reserve>Reservasi</a>
+    <a class="btn btn--secondary" href="menu.html" data-order>Pesan Online</a>
+  </nav>
+</body>
+</html>
